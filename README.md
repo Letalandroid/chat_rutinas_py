@@ -7,17 +7,17 @@ Instalamos primeramente los paquetes necesarios y si se desea, dentro de un ento
 con `env`
 
 ### Opcional
-```py
+```python
 python3 -m venv env
 ```
 
 ## Instalacion
 Paso seguido instalamos los paquetes de `requirements.txt`
-```py
+```python
 python3 -m pip install -r requeriments.txt
 ```
 
 ### Ejecucion
-```py
+```python
 python3 app.py
 ```
