@@ -1,7 +1,17 @@
-import openai
+import os
+from openai import OpenAI
 
-text = 'oli'
+client = OpenAI(
+    # This is the default and can be omitted
+    api_key=os.getenv('API_KEY')
+)
 
-openai.Completion.create(engine='text-davinci-003',
-                         prompt=text,
-                         max_token=2048)
+chat_completion = client.chat.completions.create(
+    messages=[
+        {
+            "role": "user",
+            "content": "Say this is a test",
+        }
+    ],
+    model="gpt-3.5-turbo",
+)
