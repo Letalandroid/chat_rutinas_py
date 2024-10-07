@@ -1,5 +1,12 @@
-from llama_cpp import Llama
+import ollama
 
-llm = Llama(model_path="/home/lta/Descargas/ggml-model-q4_0.bin")
-output = llm("Q: Name the planets in the solar system? A: ", max_tokens=128, stop=["Q:", "\n"], echo=True)
-print(output)
+prompt = "Hola"
+
+res = ollama.chat(
+    model="llama3.2",
+    messages=[
+        {'role': 'user', 'content': prompt}
+    ]
+)
+
+print(res['message']['content'])
