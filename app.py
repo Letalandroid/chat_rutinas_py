@@ -1,17 +1,5 @@
-import os
-from openai import OpenAI
+from llama_cpp import Llama
 
-client = OpenAI(
-    # This is the default and can be omitted
-    api_key=os.getenv('API_KEY')
-)
-
-chat_completion = client.chat.completions.create(
-    messages=[
-        {
-            "role": "user",
-            "content": "Say this is a test",
-        }
-    ],
-    model="gpt-3.5-turbo",
-)
+llm = Llama(model_path="/home/lta/Descargas/ggml-model-q4_0.bin")
+output = llm("Q: Name the planets in the solar system? A: ", max_tokens=128, stop=["Q:", "\n"], echo=True)
+print(output)
