@@ -3,3 +3,4 @@ env/
 *.env
 *.bin
 __pycache__/
+*.mp3
