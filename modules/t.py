@@ -20,5 +20,7 @@ def res1(res):
 
 def say(t):
     say_text = px.init()
+    say_text.setProperty('rate', 20)
     say_text.say(t)
+    say_text.save_to_file(t, 'audio.mp3')
     say_text.runAndWait()
